@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #229a42;
+}
+
+img {
+    height: 90px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding-right: 10px;
+      margin: 0;
+    }
+}
