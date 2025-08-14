@@ -27,7 +27,7 @@ npm start
 - Redux Toolkit
 - React-datepicker
 - ocp-plugin-modal ([npm](https://www.npmjs.com/package/ocp-plugin-modal))
-    
+
 ## Licence
 
-MIT
+Mit
