@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addEmployee } from '../../Redux/Slices/employeeSlice'
-import type { AppDispatch } from '../../Redux/Store'
-import './EmployeeForm.css'
-import DatePicker from 'react-datepicker'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../../Redux/Slices/employeeSlice';
+import type { AppDispatch } from '../../Redux/Store';
+import './EmployeeForm.css';
+import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import Modal from 'ocp-plugin-modal';
+
 
 const StatesData = [
     { code: "AL", name: "Alabama" },
@@ -71,6 +73,7 @@ const EmployeeForm = () => {
   const [state, setState] = useState('')
   const [zipCode, setZipCode] = useState('')
   const [department, setDepartment] = useState('Sales')
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -89,7 +92,7 @@ const EmployeeForm = () => {
       })
     )
 
-    alert('Employee Created!') 
+    setIsModalOpen(true)
   }
   return (
     <div className="container">
@@ -189,6 +192,15 @@ const EmployeeForm = () => {
 
         <button type="submit">Save</button>
       </form>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        closeButton="×"
+        showCloseButton={true}
+        fadeDuration={300}
+      >
+        <p>Employee Created!</p>
+      </Modal>
     </div>
   )
 }

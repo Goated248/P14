@@ -19,19 +19,19 @@ type EmployeeState = {
 }
 
 const initialState: EmployeeState = {
-    employees: JSON.parse(localStorage.getItem("employees")?? ""),
+    employees: JSON.parse(localStorage.getItem("employees") ?? ""),
 }
 
-const employeeSlice = createSlice ({
+const employeeSlice = createSlice({
     name: 'employee',
     initialState,
     reducers: {
-        addEmployee: (state, action: PayloadAction<Employee>) =>{
+        addEmployee: (state, action: PayloadAction<Employee>) => {
             state.employees.push(action.payload)
             localStorage.setItem("employees", JSON.stringify(state.employees))
         },
     },
 })
 
-export const {addEmployee} = employeeSlice.actions
+export const { addEmployee } = employeeSlice.actions
 export default employeeSlice.reducer
