@@ -20,13 +20,13 @@ type EmployeeState = {
 
 let storedEmployees = [];
 try {
-  storedEmployees = JSON.parse(localStorage.getItem("employees") || "[]");
+    storedEmployees = JSON.parse(localStorage.getItem("employees") || "[]");
 } catch (e) {
-  console.error("Erreur lors de la lecture des employés depuis le localStorage", e);
+    console.error("Erreur lors de la lecture des employés depuis le localStorage", e);
 }
 
 const initialState: EmployeeState = {
-  employees: storedEmployees,
+    employees: storedEmployees,
 }
 
 const employeeSlice = createSlice({
