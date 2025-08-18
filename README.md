@@ -18,7 +18,7 @@ Elle utilise Redux pour la gestion des états et un plugin de modale réutilisab
 git clone https://github.com/Goated248/P14.git
 cd P14
 npm install
-npm start
+npm run dev
 ```
 
 ## Dépendances principales

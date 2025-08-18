@@ -19,9 +19,11 @@ const EmployeeList = () => {
   const employees = useSelector((state: RootState) => state.employee.employees)
   const [filterText, setFilterText] = useState("")
 
+
+
   const filteredEmployees = employees.filter((employee) =>
     Object.values(employee).some((value) =>
-      value.toString().toLowerCase().includes(filterText.toLowerCase())
+      value.toString().toLowerCase().includes(filterText.toLowerCase().trim())
     )
   )
 
